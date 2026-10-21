@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "voice-to-claude-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "enesbasbug/voice-to-claude"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "voice-to-claude@voice-to-claude-marketplace": true
+  }
+}

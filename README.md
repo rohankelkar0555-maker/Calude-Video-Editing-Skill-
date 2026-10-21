@@ -18,3 +18,29 @@ Vendored from the top picks in
 - **remotion-***: Node.js. Each video is a Remotion project (`npx create-video`).
 
 To update, re-copy from upstream.
+
+## Plugin: voice-to-claude
+
+[enesbasbug/voice-to-claude](https://github.com/enesbasbug/voice-to-claude) (MIT) adds
+push-to-talk dictation: hold **Ctrl+Alt** (Ctrl+Option on macOS), speak, release to
+transcribe locally with whisper.cpp. It is a Claude Code plugin, not a skill, so it is
+not vendored. `.claude/settings.json` registers its marketplace and enables it, so Claude
+Code offers to install it when you trust this folder.
+
+After it installs, run once:
+
+```
+/voice-to-claude:setup
+```
+
+Setup builds whisper.cpp and downloads the base model (~142 MB), about 3-5 minutes.
+It needs **macOS** (Apple Silicon recommended), Python 3.10-3.12, cmake and the Xcode
+Command Line Tools (`brew install cmake && xcode-select --install`). Other commands:
+`/voice-to-claude:start`, `stop`, `status`, `config`.
+
+To install by hand instead:
+
+```
+/plugin marketplace add enesbasbug/voice-to-claude
+/plugin install voice-to-claude@voice-to-claude-marketplace
+```
